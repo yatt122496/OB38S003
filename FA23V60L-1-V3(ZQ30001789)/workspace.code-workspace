@@ -1,0 +1,48 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.editor.enablePreview": false,
+		"window.closeWhenEmpty": true,
+		"files.associations": {
+			"UART.C": "cpp",
+			"timer.h": "c",
+			"ntc.h": "c",
+			"adc.h": "c",
+			"PWM.C": "cpp",
+			"pwm.h": "c",
+			"pca.h": "c",
+			"gpio.h": "c",
+			"led.h": "c",
+			"beep.h": "c",
+			"uart.h": "c",
+			"stdio.h": "c",
+			"STDIO.H": "cpp",
+			"sys.h": "c",
+			"tm16xx.h": "c",
+			"ob38s003.h": "c",
+			"uart0.h": "c",
+			"sysinc.h": "c",
+			"wdt.h": "c",
+			"type.h": "c",
+			"timerkey.h": "c",
+			"heatkey.h": "c",
+			"tempkye.h": "c",
+			"flakey.h": "c",
+			"TM1638.C": "cpp",
+			"ad.h": "c",
+			"sysinit.h": "c",
+			"ledautocon.h": "c",
+			"HeatCon.C": "cpp",
+			"eeprom.h": "c",
+			"gainadkeyvalue.h": "c",
+			"absacc.h": "c",
+			"ABSACC.H": "cpp",
+			"initial.h": "c",
+			"errtest.h": "c"
+		}
+	}
+}

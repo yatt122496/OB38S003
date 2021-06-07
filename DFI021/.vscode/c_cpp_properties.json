@@ -1,0 +1,91 @@
+{
+    "configurations": [
+        {
+            "name": "Target 1",
+            "includePath": [
+                "c:\\file\\program\\OB38S003",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE",
+                "C:\\Keil_v5\\C51\\INC",
+                "c:\\file\\program\\OB38S003\\DFI021",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\Initial",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\FlaCon",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\HeatCon",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\AD",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\VrAd",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\key",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\IR",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\SysTimer",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\SH_EEPROM"
+            ],
+            "defines": [
+                "__C51__",
+                "__VSCODE_C51__",
+                "reentrant=",
+                "compact=",
+                "small=",
+                "large=",
+                "data=",
+                "idata=",
+                "pdata=",
+                "bdata=",
+                "xdata=",
+                "code=",
+                "bit=char",
+                "sbit=char",
+                "sfr=char",
+                "sfr16=int",
+                "sfr32=int",
+                "interrupt=",
+                "using=",
+                "_at_=",
+                "_priority_=",
+                "_task_="
+            ],
+            "intelliSenseMode": "${default}"
+        },
+        {
+            "name": "Target1",
+            "includePath": [
+                "c:\\file\\program\\OB38S003",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE",
+                "C:\\Keil_v5\\C51\\INC",
+                "c:\\file\\program\\OB38S003\\DFI021",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\Initial",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\FlaCon",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\HeatCon",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\AD",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\VrAd",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\key",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\IR",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\SysTimer",
+                "c:\\file\\program\\OB38S003\\DFI021\\HARDWARE\\SH_EEPROM"
+            ],
+            "defines": [
+                "__C51__",
+                "__VSCODE_C51__",
+                "reentrant=",
+                "compact=",
+                "small=",
+                "large=",
+                "data=",
+                "idata=",
+                "pdata=",
+                "bdata=",
+                "xdata=",
+                "code=",
+                "bit=char",
+                "sbit=char",
+                "sfr=char",
+                "sfr16=int",
+                "sfr32=int",
+                "interrupt=",
+                "using=",
+                "_at_=",
+                "_priority_=",
+                "_task_="
+            ],
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}

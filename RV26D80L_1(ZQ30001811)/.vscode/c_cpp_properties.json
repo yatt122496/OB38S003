@@ -1,0 +1,58 @@
+{
+    "configurations": [
+        {
+            "name": "Target1",
+            "includePath": [
+                "c:\\file\\program\\OB38S003\\1",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\AD",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\Disp",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\ErrTest",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\FlaCon",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\HeatCon",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\iic",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\Initial",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\IR",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\Key",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\main",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\SH_EEPROM",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\SysTimer",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\tm1638",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\Uart",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\LedAutoCon",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\SysInit",
+                "C:\\Keil_v5\\C51\\INC",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\KEY",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\ADC",
+                "c:\\file\\program\\OB38S003\\RV26D80L_1(ZQ30001811)\\HARDWARE\\TM1638"
+            ],
+            "defines": [
+                "__C51__",
+                "__VSCODE_C51__",
+                "reentrant=",
+                "compact=",
+                "small=",
+                "large=",
+                "data=",
+                "idata=",
+                "pdata=",
+                "bdata=",
+                "xdata=",
+                "code=",
+                "bit=char",
+                "sbit=char",
+                "sfr=char",
+                "sfr16=int",
+                "sfr32=int",
+                "interrupt=",
+                "using=",
+                "_at_=",
+                "_priority_=",
+                "_task_="
+            ],
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}

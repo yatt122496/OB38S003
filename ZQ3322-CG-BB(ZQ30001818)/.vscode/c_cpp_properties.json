@@ -1,0 +1,52 @@
+{
+    "configurations": [
+        {
+            "name": "Target1",
+            "includePath": [
+                "c:\\file\\program\\OB38S003",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\Lib\\inc",
+                "C:\\Keil_v5\\C51\\INC",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\Lib\\src",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\Initial",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\IR",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\Key",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\Disp",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\AD",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\SysTimer",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\TM1638",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\FlaCon",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\HeatCon",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\ErrTest",
+                "c:\\file\\program\\OB38S003\\ZQ3322-CG-BB(ZQ30001818)\\HARDWARE\\main"
+            ],
+            "defines": [
+                "__C51__",
+                "__VSCODE_C51__",
+                "reentrant=",
+                "compact=",
+                "small=",
+                "large=",
+                "data=",
+                "idata=",
+                "pdata=",
+                "bdata=",
+                "xdata=",
+                "code=",
+                "bit=char",
+                "sbit=char",
+                "sfr=char",
+                "sfr16=int",
+                "sfr32=int",
+                "interrupt=",
+                "using=",
+                "_at_=",
+                "_priority_=",
+                "_task_="
+            ],
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}

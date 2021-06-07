@@ -1,0 +1,49 @@
+{
+    "configurations": [
+        {
+            "name": "Target1",
+            "includePath": [
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE",
+                "c:\\file\\program\\OB38S003",
+                "C:\\Keil_v5\\C51\\INC",
+                "c:\\file\\program\\OB38S003\\2322-L_V1",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\KEY",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\IR",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\SysTimer",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\Disp",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\TM1638",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\SysInit",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\ADC",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\HeatCon",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\LedAutoCon",
+                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\ErrTest"
+            ],
+            "defines": [
+                "__C51__",
+                "__VSCODE_C51__",
+                "reentrant=",
+                "compact=",
+                "small=",
+                "large=",
+                "data=",
+                "idata=",
+                "pdata=",
+                "bdata=",
+                "xdata=",
+                "code=",
+                "bit=char",
+                "sbit=char",
+                "sfr=char",
+                "sfr16=int",
+                "sfr32=int",
+                "interrupt=",
+                "using=",
+                "_at_=",
+                "_priority_=",
+                "_task_="
+            ],
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}
