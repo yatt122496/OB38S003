@@ -14,13 +14,13 @@
 #include "HARDWARE/main/SysInc.h"
 #include "HARDWARE\Lib\inc\wdt.h"
 
-bit           BootKeyLock;
+bit BootKeyLock;
 unsigned char UpKeyValue;
 #if IR_TEST
-	extern xdata u8 bData[40], bAD_indx;
+extern xdata u8 bData[40], bAD_indx;
 #endif
 //
-void main( void )
+void main(void)
 {
 #if UART_TEST
 #if IR_TEST
@@ -28,15 +28,15 @@ void main( void )
 #endif
 	xdata unsigned long dwSys_time = 0;
 #endif
-   InitSys();
-   TM1638_Init();
-   GoErrTestInit();
-   DowGAutoInit();
+	InitSys();
+	TM1638_Init();
+	GoErrTestInit();
+	DowGAutoInit();
 #if UART_TEST
 	// init_UART0();
 #endif
-   while(1)
-   { //正常工作
+	while (1)
+	{ //正常工作
 #if UART_TEST
 		if (Sys_Time - dwSys_time > 399)
 		{
@@ -60,13 +60,13 @@ void main( void )
 #if WDT_SWITCH
 		WDT_ClearWDT(); //清除看门狗计数器
 #endif
-	//  RSTSTAT	= Bin(00000000);  //重置看门狗
-	 KeyValueApart();
-	 HeatCon();
-     ErrTest();
-     TimerFun();
-	 Disp();
-	 SysTimer();
-	 TimerOff();
-   }
+		//  RSTSTAT	= Bin(00000000);  //重置看门狗
+		KeyValueApart();
+		HeatCon();
+		ErrTest();
+		TimerFun();
+		Disp();
+		SysTimer();
+		TimerOff();
+	}
 }
