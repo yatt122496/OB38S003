@@ -116,7 +116,7 @@ void P3EI_IRQHandler(void)  interrupt P3EI_VECTOR
 						break;
 					}
 					IrTimerBuff++;
-				} while (IrTimerBuff < 6);
+				} while (IrTimerBuff < IR_SIZE);
 				goto IrError;
 			}
 			IrDtat <<= 1;

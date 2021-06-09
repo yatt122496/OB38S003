@@ -33,7 +33,8 @@
 			"type.h": "c",
 			"e22inc.h": "c",
 			"intrins.h": "c",
-			"TM1638.C": "cpp"
+			"TM1638.C": "cpp",
+			"errtest.h": "c"
 		}
 	}
 }

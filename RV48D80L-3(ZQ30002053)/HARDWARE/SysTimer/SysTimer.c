@@ -117,10 +117,12 @@ u8 Timer1Ms;
 *
 ***********************************************************/
 u8 AdErrTim;
+unsigned long Sys_Time = 0;
 void SysTimer_Isr(void)  interrupt TMR2_VECTOR   //1ms中断一次
 {
 	if (TMR2_GetOverflowIntFlag())
 	{
+		Sys_Time++;
 		//***********************************************
 		if (++Timer1Ms > 9)
 		{
@@ -366,6 +368,8 @@ void SysTimer_Isr(void)  interrupt TMR2_VECTOR   //1ms中断一次
 			}
 		}
 		LedAutoCon();
+		//***********************************************
+		TMR2_ClearOverflowIntFlag();
 	}
 }
 /************************************************************

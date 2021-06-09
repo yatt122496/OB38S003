@@ -38,9 +38,10 @@ void main(void)
 	while (1)
 	{ //正常工作
 #if UART_TEST
-		if (Sys_Time - dwSys_time > 399)
+		if (Sys_Time - dwSys_time > 999)
 		{
 			dwSys_time = Sys_Time;
+			FLA_B = !FLA_B;
 			// FOT = !FOT;
 			// UART0_TX(0xff);
 #if IR_TEST

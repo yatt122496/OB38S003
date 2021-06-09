@@ -86,11 +86,11 @@ TMS/AN3/VLPD/P1.3--|10			 11|--P1.4/AN4/TDI
 * 功能说明:IO定义,如需修改MCU引脚在这里进行
 ************************************************************/
 #define UART_TEST			0
-#define CONFIG_ZERO_CHECK	0
-#define WDT_SWITCH			0
+#define CONFIG_ZERO_CHECK	1
+#define WDT_SWITCH			1
 
 #if UART_TEST
-#define IR_TEST				1
+#define IR_TEST				0
 #else
 #define IR_TEST	0
 #endif
@@ -113,7 +113,7 @@ TMS/AN3/VLPD/P1.3--|10			 11|--P1.4/AN4/TDI
 //--------------------
 #define  STB      P04//P3_3
 #define  CLK      P00//P3_4
-#define  DIO      P01//P3_5
+#define  DIO      P02//P3_5
 //--------------------
 #define  SHOWKEY  P32//P4_2
 /************************************************************
@@ -228,6 +228,9 @@ TMS/AN3/VLPD/P1.3--|10			 11|--P1.4/AN4/TDI
 
 #if WDT_SWITCH
 #include "HARDWARE\Lib\inc\wdt.h"
+#endif
+#if UART_TEST
+extern unsigned long Sys_Time;
 #endif
 
 #endif
