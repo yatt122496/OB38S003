@@ -118,16 +118,16 @@ void	InitSys(void)
 	// P3M0  = Bin(00000100);	//  1      0    	 输出    模式
 	// P3M1  = Bin(00111011);	//  1      1         开漏输出模式
 	P24 = 0; P25 = 0; P31 = 0; P04 = 0;
-	P00 = 0; P01 = 0;	 	   P03 = 0;
+	P00 = 0; P02 = 0;	 	   P03 = 0;
 	P24CFG = GPIO_MUX_GPIO;
 	P25CFG = GPIO_MUX_GPIO;
 	P31CFG = GPIO_MUX_GPIO;
 	P04CFG = GPIO_MUX_GPIO;
 	P00CFG = GPIO_MUX_GPIO;
-	P01CFG = GPIO_MUX_GPIO;
+	P02CFG = GPIO_MUX_GPIO;
 
 	P03CFG = GPIO_MUX_GPIO;
-	P0TRIS = (P0TRIS & ~((1 << 3))) | ((1 << 0) | (1 << 1) | (1 << 4));
+	P0TRIS = (P0TRIS & ~((1 << 3))) | ((1 << 0) | (1 << 2) | (1 << 4));
 	// P1TRIS = (P1TRIS & ~((0))) | ((0));
 	P2TRIS = (P2TRIS & ~(0)) | ((1 << 4) | (1 << 5));
 	P3TRIS = (P3TRIS & ~((1 << 1))) | ((0));

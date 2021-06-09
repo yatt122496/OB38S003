@@ -104,7 +104,7 @@ GO_TEST/INT0/P3.2--|1		     20|--P4.2/TXAL1 \
 //	IIC ͨѶ
 #define  STB      P04//P3_3
 #define  CLK      P00//P3_4
-#define  DIO      P01//P3_5
+#define  DIO      P02//P3_5
 //-----------------------
 #define  AD_NTC	   0x87 //P1_3 AN3			P12 an10
 #define  AD_KEY	   0x83	//P1_1 AN1			P11 an9
