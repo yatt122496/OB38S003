@@ -39,9 +39,9 @@ unsigned char ChecksumErr0xa5;
 
 void SspWrite(unsigned int addr,unsigned char dat)
 {
-	FLASH_UnLock();
+	// FLASH_UnLock();
 	FLASH_Write(FLASH_DATA, addr, dat);
-	FLASH_Lock();
+	// FLASH_Lock();
 }
 // void SspWrite(unsigned int addr,unsigned char dat)
 // {
@@ -88,9 +88,7 @@ void SspWrite(unsigned int addr,unsigned char dat)
 
 void SspErase(unsigned char addr)
 {
-	FLASH_UnLock();
-	FLASH_Erase(FLASH_DATA,addr);
-	FLASH_Lock();
+	FLASH_Erase(FLASH_DATA,addr * FAN_SECTION_SIZE);
 }
 // void SspErase(unsigned char addr)
 // {
@@ -137,11 +135,7 @@ void SspErase(unsigned char addr)
 
 unsigned char ReadFlash(unsigned int addr)
 {
-	unsigned char temp;
-	FLASH_UnLock();
-	temp = FLASH_Read(FLASH_DATA,addr);
-	FLASH_Lock();
-	return temp;
+	return FLASH_Read(FLASH_DATA,addr);
 }
 // unsigned char ReadFlash(unsigned int addr)
 // {
@@ -157,8 +151,18 @@ unsigned char ReadFlash(unsigned int addr)
 ************************************************************/
 void WriteBootData( void )
 {
-	SspWrite(0,0x55);
-	SspWrite(1,0xaa);
+	IRQ_ALL_DISABLE();
+	FLASH_UnLock();
+	SspWrite(0,0);
+	SspWrite(1,0);
+	SspWrite(2,0x55);
+	SspWrite(3,0xaa);
+	SspWrite(4,0);
+	SspWrite(5,0);
+	SspWrite(6,0);
+	SspWrite(7,0);
+	FLASH_Lock();
+	IRQ_ALL_ENABLE();
 }
 // void WriteBootData( void )
 // {
@@ -187,12 +191,19 @@ bit CheckEepromMsgNull(unsigned char eepMsgDat)
 	//---------------------
 	i = FLASH_MSGBYTES;
 	//---------------------
+	IRQ_ALL_DISABLE();
+	FLASH_UnLock();
 	do {
 		i--;
 		DataBuff=ReadFlash(EepMsgMul+i);
-		if(DataBuff!=0xff)
+		if(DataBuff!=0xff) {
+			FLASH_Lock();
+			IRQ_ALL_ENABLE();
 			return 1;
+		}
 	}while(i);
+	FLASH_Lock();
+	IRQ_ALL_ENABLE();
 	//---------------------
 	return 0;
 }
@@ -233,8 +244,12 @@ bit locateEepromMsg(unsigned char *Lndex)
 ************************************************************/
 void EraseEepromMsg( void )
 {
-     SspErase(0);
-	 SspErase(1);
+	IRQ_ALL_DISABLE();
+	FLASH_UnLock();
+	SspErase(0);
+	SspErase(1);
+	FLASH_Lock();
+	IRQ_ALL_ENABLE();
 }
 // void EraseEepromMsg( void )
 // {
@@ -258,12 +273,16 @@ void WriteEepromMsg(unsigned char MsgAddr,unsigned char *WriteData)
 	unsigned char WriteDataSize;
 	AddrBuff=MsgAddr*FLASH_MSGBYTES;
 	WriteDataSize=0;
+	IRQ_ALL_DISABLE();
+	FLASH_UnLock();
 	do {
 		SspWrite(AddrBuff,*WriteData);
 		AddrBuff++;
 		WriteData++;
 		WriteDataSize++;
 	}while(WriteDataSize<FLASH_MSGBYTES);
+	FLASH_Lock();
+	IRQ_ALL_ENABLE();
 }
 // void WriteEepromMsg(unsigned char MsgAddr,unsigned char *WriteData)
 // {
@@ -293,12 +312,16 @@ void ReadEepromMsg(unsigned char MsgAddr,unsigned char *ReadData)
 	unsigned char ReadDataSize;
 	AddrBuff=MsgAddr*FLASH_MSGBYTES;
 	ReadDataSize=0;
+	IRQ_ALL_DISABLE();
+	FLASH_UnLock();
 	do {
 		*ReadData = ReadFlash(AddrBuff);
 		AddrBuff++;
 		ReadData++;
 		ReadDataSize++;
 	}while(ReadDataSize<FLASH_MSGBYTES);
+	FLASH_Lock();
+	IRQ_ALL_ENABLE();
 }
 /************************************************************
 * º¯ÊýÃû:
@@ -345,6 +368,7 @@ bit EepRomBoot(unsigned char PowerErase)
 {
 	bit BootCon;
 	bit Ret;
+	unsigned char bTemp0, bTemp1;
 	//-----------------
 	BootCon = 0;
 	//-----------------
@@ -352,7 +376,13 @@ bit EepRomBoot(unsigned char PowerErase)
 		goto EraseEeprom;
 	//-----------------
 	RepeatRead:
-	if((ReadFlash(0x0000)==0x55) && (ReadFlash(0x0001)==0xaa)) {
+	IRQ_ALL_DISABLE();
+	FLASH_UnLock();
+	bTemp0 = ReadFlash(2);
+	bTemp1 = ReadFlash(3);
+	FLASH_Lock();
+	IRQ_ALL_ENABLE();
+	if((bTemp0==0x55) && (bTemp1==0xaa)) {
 		if(BootCon==0)
 			Ret=1;
 		else
