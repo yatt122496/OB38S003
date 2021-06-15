@@ -59,7 +59,7 @@
 *功能说明:  I/O引脚备置
 ************************************************************/
 #define UART_TEST			0
-#define CONFIG_ZERO_CHECK	0
+#define CONFIG_ZERO_CHECK	1
 #define WDT_SWITCH			1
 
 #if UART_TEST
