@@ -107,7 +107,7 @@ void FlaInit(void)
 unsigned int dot1pwm = 0;        //dot1pwm[9:0]=Duty (PWM Channel 0 Data Register 0~1023)
 unsigned int fotpwm = 0;        //fotpwm[9:0]=Duty (PWM Channel 2 Data Register 0~1023)
 unsigned int dot2pwm = 0;        //dot2pwm[9:0]=Duty (PWM Channel 3 Data Register 0~1023)
-unsigned char b5Ms0 = 0, b5Ms1 = 0;
+unsigned char b5Ms0 = 49, b5Ms1 = 100;
 void Timer0( void )  interrupt TMR1_VECTOR //50us
 {
 	TH1   = (d_MODEVALUE_T1-d_RELOADVALUE_T1) >> 8;
@@ -167,9 +167,9 @@ void Timer0( void )  interrupt TMR1_VECTOR //50us
 				// 		FlaTimerOff = 9;
 				// 	}
 				// }
-				dot1pwm = 100;
+				dot1pwm = PWM_PRE10;
 				// fotpwm = 0;
-				dot2pwm = 100;
+				dot2pwm = PWM_PRE10;
 				//-----------------------
 			}
 			EPWM_ConfigChannelSymDuty(EPWM0, dot2pwm);
@@ -201,7 +201,7 @@ void Timer0( void )  interrupt TMR1_VECTOR //50us
 					// FlaTimerOff = 10 - FlaTimerOn;
 				// 	//-----------------------
 				// }
-				fotpwm = FlaTimerOn * 100;
+				fotpwm = FlaTimerOn * PWM_PRE10;
 				if(DotAotoCon) {
 					dot1pwm = fotpwm;
 					dot2pwm = fotpwm;
@@ -211,9 +211,9 @@ void Timer0( void )  interrupt TMR1_VECTOR //50us
 				EPWM_ConfigChannelSymDuty(EPWM3, dot1pwm);
 			}
 			if(!DotAotoCon) {				  //底灰自动开，底灰不随火焰
-				b5Ms0++;
-				if (b5Ms0 > 99) {
-					b5Ms0 = 0;
+				b5Ms0--;
+				if (!b5Ms0) {
+					b5Ms0 = 100;
 					if(DotSpeedTimer1)//底灰动态速度控制
 						DotSpeedTimer1--;
 					else {
@@ -237,7 +237,7 @@ void Timer0( void )  interrupt TMR1_VECTOR //50us
 					}
 					DotTimerOn1 = DotTimerOffBuf1;
 					// DotTimerOff1= 100 - DotTimerOn1;
-					dot1pwm = DotTimerOn1 * 10;
+					dot1pwm = DotTimerOn1 * PWM_PRE / 2;
 					// fotpwm = 0;
 					// dot2pwm = 0;
 					// EPWM_ConfigChannelSymDuty(EPWM0, dot2pwm);
@@ -279,9 +279,9 @@ void Timer0( void )  interrupt TMR1_VECTOR //50us
 				// 	//-----------------------
 				// }
 				//-----------------------
-				b5Ms1++;
-				if (b5Ms1 > 99) {
-					b5Ms1 = 0;
+				b5Ms1--;
+				if (!b5Ms1) {
+					b5Ms1 = 100;
 					if(DotSpeedTimer2)//底灰动态速度控制
 						DotSpeedTimer2--;
 					else {
@@ -306,7 +306,7 @@ void Timer0( void )  interrupt TMR1_VECTOR //50us
 					// DotTimerOff2= 100 - DotTimerOn2;
 					// dot1pwm = DotTimerOn1 * 10;
 					// fotpwm = 0;
-					dot2pwm = DotTimerOn2 * 10;
+					dot2pwm = DotTimerOn2 * PWM_PRE / 2;
 					EPWM_ConfigChannelSymDuty(EPWM0, dot2pwm);
 					// EPWM_ConfigChannelSymDuty(EPWM1, fotpwm);
 					// EPWM_ConfigChannelSymDuty(EPWM3, dot1pwm);
@@ -357,9 +357,9 @@ void Timer0( void )  interrupt TMR1_VECTOR //50us
 		} else if(LockWoodCon) {
 			// DOT1 = 1;	   //底灰自动关，底灰跟随火焰
 			// DOT2 = 1;
-			dot1pwm = 999;
+			dot1pwm = PWM_MAX;
 			// fotpwm = 0;
-			dot2pwm = 999;
+			dot2pwm = PWM_MAX;
 			EPWM_ConfigChannelSymDuty(EPWM0, dot2pwm);
 			// EPWM_ConfigChannelSymDuty(EPWM1, fotpwm);
 			EPWM_ConfigChannelSymDuty(EPWM3, dot1pwm);

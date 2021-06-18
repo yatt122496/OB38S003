@@ -67,6 +67,9 @@
 #else
 #define IR_TEST	0
 #endif
+#define PWM_MAX		7500u
+#define PWM_PRE		75u
+#define PWM_PRE10	750u
 //-----------------
 #define  HOT   P32//P4_2
 #define  MOT   P33//P4_1
@@ -96,7 +99,7 @@
 #define d_MODEVALUE_T0      65536     //MODE1 16bit 65536
 #define d_RELOADVALUE_T0    120      //User Define Reload Value
 #define d_MODEVALUE_T1      65536    //MODE1 16bit 65536
-#define d_RELOADVALUE_T1    300      //User Define Reload Value
+#define d_RELOADVALUE_T1    280      //User Define Reload Value
 #define d_MODEVALUE_T2      65536
 #define d_RELOADVALUE_T2    10000 //User Define Reload Value
 /************************************************************

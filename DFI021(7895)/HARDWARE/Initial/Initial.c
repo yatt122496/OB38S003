@@ -100,9 +100,9 @@ static void sEPWMInit(void)
 	EPWM_ConfigChannelClk(EPWM1, EPWM_CLK_DIV_32);
 	EPWM_ConfigChannelClk(EPWM3, EPWM_CLK_DIV_32);
 	//设置EPWM 周期以及占空比
-	EPWM_ConfigChannelPeriod(EPWM0, 1000);
-	EPWM_ConfigChannelPeriod(EPWM1, 1000);
-	EPWM_ConfigChannelPeriod(EPWM3, 1000);
+	EPWM_ConfigChannelPeriod(EPWM0, PWM_MAX);
+	EPWM_ConfigChannelPeriod(EPWM1, PWM_MAX);
+	EPWM_ConfigChannelPeriod(EPWM3, PWM_MAX);
 	EPWM_ConfigChannelSymDuty(EPWM0, 0);
 	EPWM_ConfigChannelSymDuty(EPWM1, 0);
 	EPWM_ConfigChannelSymDuty(EPWM3, 0);
