@@ -1,0 +1,51 @@
+{
+    "configurations": [
+        {
+            "name": "Target1",
+            "includePath": [
+                "c:\\file\\program\\OB38S003",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\Lib\\inc",
+                "C:\\Keil_v5\\C51\\INC",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\Mcu",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\Key",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\FlaCon",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\HeatCon",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\Disp",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\SysMem",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\IR",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\AD",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\VrAd",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\ErrTest",
+                "c:\\file\\program\\OB38S003\\DFI-550-1_v2\\HARDWARE\\Lib\\src"
+            ],
+            "defines": [
+                "__C51__",
+                "__VSCODE_C51__",
+                "reentrant=",
+                "compact=",
+                "small=",
+                "large=",
+                "data=",
+                "idata=",
+                "pdata=",
+                "bdata=",
+                "xdata=",
+                "code=",
+                "bit=char",
+                "sbit=char",
+                "sfr=char",
+                "sfr16=int",
+                "sfr32=int",
+                "interrupt=",
+                "using=",
+                "_at_=",
+                "_priority_=",
+                "_task_="
+            ],
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}
