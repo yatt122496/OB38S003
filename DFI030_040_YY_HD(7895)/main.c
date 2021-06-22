@@ -99,7 +99,7 @@ void main(void)
   while(1)
   {
 #if UART_TEST
-		if (Sys_Time - dwSys_time > 399) {
+		if (Sys_Time - dwSys_time > 999) {
 			dwSys_time = Sys_Time;
 			// FOT = !FOT;
 			UART1_SendByte(0x5a);

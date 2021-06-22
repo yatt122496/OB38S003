@@ -10,5 +10,6 @@ extern void Music_stop();
 extern void Specify_Volume(void);
 extern void MusicCon(void);
 extern void Cycle_play(u8 num);
+extern void UART1_SendByte(u8 dat);
 
 #endif
