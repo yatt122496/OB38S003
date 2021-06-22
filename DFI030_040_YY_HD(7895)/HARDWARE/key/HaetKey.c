@@ -19,6 +19,9 @@ bit HeatLock;
 
 void HeatKey(void)
 {
+#if VTX_TEST
+	bVtime--;
+#endif
   if(HeatLock)
   {
 //    if(!Standby)

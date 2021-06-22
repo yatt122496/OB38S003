@@ -32,6 +32,9 @@ void FlaKey(void)
 //  }else
 //  {
 //    OnFla:
+#if VTX_TEST
+	bVtime++;
+#endif
   if(!FlaGears){
 	FlaGears   = 5;
   }else

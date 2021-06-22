@@ -118,20 +118,20 @@ void Timer0ISR( void )  interrupt TMR2_VECTOR   //1ms÷–∂œ“ª¥Œ
 					ADC_GO();
 					// FLA_Y = !FLA_Y;
 					AdErrTim = 0;
-				} else if (ADCCHS == ADC_CH_10) {
+				} else if (ADCCHS == ADC_CH_18) {
 					AdVrNew    = 1;
 					// AdVrValue  = (((ADRESH & 0x0f) << 8) | ADRESL) >> 4;
 					AdVrValue  = ADC_GetADCResult() >> 4;
 					// ADCON       = AD_KEY  ;//Bin(10000011);
-					ADC_EnableChannel(ADC_CH_18);
+					ADC_EnableChannel(ADC_CH_5);
 					ADC_GO();
 					AdErrTim = 0;
-				} else if (ADCCHS == ADC_CH_18) {
+				} else if (ADCCHS == ADC_CH_10) {
 					AdKeyNew    = 1;
 					// AdVrValue  = (((ADRESH & 0x0f) << 8) | ADRESL) >> 4;
 					AdKeyValue  = ADC_GetADCResult() >> 4;
 					// ADCON       = AD_KEY  ;//Bin(10000011);
-					ADC_EnableChannel(ADC_CH_5);
+					ADC_EnableChannel(ADC_CH_18);
 					ADC_GO();
 					AdErrTim = 0;
 				}

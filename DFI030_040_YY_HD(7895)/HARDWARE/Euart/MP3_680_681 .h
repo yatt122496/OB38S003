@@ -3,6 +3,7 @@
 
 extern u8 Vol;
 extern u8  MusicTime50ms;
+extern u8 bVtime;
 extern void VolKey(void);
 
 extern void EuartInit(void);

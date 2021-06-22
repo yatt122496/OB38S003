@@ -112,7 +112,7 @@ void	InitSys(void)
 	// CLKCON =Bin(00000000);
 #if WDT_SWITCH
 	// 开启WDT溢出时间,Fsys=24Mhz -> Twdt = 4194304/24 = 174.76ms
-	WDT_ConfigOverflowTime(WDT_CLK_4194304);
+	WDT_ConfigOverflowTime(WDT_CLK_67108864);
 	//设置WDT溢出中断
 	WDT_EnableOverflowInt();
 	SYS_EnableWDTReset();   //开启看门狗复位功能,CONFIG中设置SOFTWARECONTROL(软件控制)
@@ -147,6 +147,7 @@ void	InitSys(void)
 	P1TRIS = (P1TRIS & ~((1 << 1) | (1 << 2))) | ((1 << 7));
 	P2TRIS = (P2TRIS & ~((1 << 0) | (1 << 2))) | ((1 << 1));
 	P3TRIS = (P3TRIS & ~((1 << 0))) | (0);
+	// GPIO_ENABLE_UP(P1UP, GPIO_PIN_2);
 #endif
 	//----------------------
 #if (IO_AD_KEY_OTP==0)
@@ -157,7 +158,7 @@ void	InitSys(void)
 	// P3 	  = Bin(00000010);
 	// P3M0  = Bin(11111100);
 	// P3M1  = Bin(00000001);
-	P24 = 0; P25 = 0; P31 = 0; P04 = 0;
+	P24 = 0; P25 = 1; P31 = 0; P04 = 0;
 	P00 = 0; P02 = 0;	 	   P03 = 0;
 	P24CFG = GPIO_MUX_GPIO;
 	P25CFG = GPIO_MUX_GPIO;
@@ -277,7 +278,7 @@ void	InitSys(void)
 	//----------------------
 //	EA   = 1;
 	//----------------------
-	IRQ_ALL_ENABLE();							 //开启总中断
+	// IRQ_ALL_ENABLE();							 //开启总中断
 	TMR_Start(TMR0);
 	TMR_Start(TMR1);
 	TMR2_Start();

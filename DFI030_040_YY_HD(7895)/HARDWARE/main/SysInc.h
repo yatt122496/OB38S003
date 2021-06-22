@@ -60,9 +60,9 @@
 *功能说明:  I/O引脚备置
 ************************************************************/
 //-----------------
-#define UART_TEST			1
+#define UART_TEST			0
 #define CONFIG_ZERO_CHECK	0
-#define WDT_SWITCH			0
+#define WDT_SWITCH			1
 
 #if UART_TEST
 #define IR_TEST				0
@@ -78,7 +78,8 @@
 #define  MOT   P24//P3_0
 
 #define  VTX   P25
-#define  cVTX_Time	52       //19200
+#define  VTX_TEST   0
+#define  cVTX_Time	130       //9600 123-135
 //-----------------
 #define  FOT   P21//P1_5		 PG1
 #define  DOT1  P23//P1_6	p1.6 PG3

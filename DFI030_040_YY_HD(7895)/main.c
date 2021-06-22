@@ -36,6 +36,9 @@ void Delay_long(u16 nCount)
   {
     Delay(0xffff);
 	nCount--;
+#if WDT_SWITCH
+		WDT_ClearWDT();					//清除看门狗计数器
+#endif
   }
 }
 
@@ -102,7 +105,7 @@ void main(void)
 		if (Sys_Time - dwSys_time > 999) {
 			dwSys_time = Sys_Time;
 			// FOT = !FOT;
-			UART1_SendByte(0x5a);
+			UART1_SendByte(0xa5);
 #if IR_TEST
 			// UART0_TX(bAD_indx);
 			if (bAD_indx) {
