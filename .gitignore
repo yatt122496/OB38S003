@@ -26,7 +26,7 @@
 /*/*/*.sct
 /*/*/*.map
 /*/*.bat
-# /*/*/keil-assistant.log
+/*/*/keil-assistant.log
 
 # 51编译生成文件
 /*/*/*.m51
