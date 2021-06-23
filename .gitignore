@@ -27,6 +27,7 @@
 /*/*/*.map
 /*/*.bat
 /*/*/keil-assistant.log
+/*/*/uv4.log.lock
 
 # 51编译生成文件
 /*/*/*.m51
