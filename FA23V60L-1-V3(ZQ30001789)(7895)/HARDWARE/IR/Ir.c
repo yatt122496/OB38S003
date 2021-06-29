@@ -40,6 +40,8 @@ xdata u8 bData[40] = 0, bAD_indx = 0;
 #endif
 void Timer0_Isr(void)  interrupt TMR0_VECTOR
 {
+	TH0 = (d_MODEVALUE_T0 - d_RELOADVALUE_T0) >> 8;
+	TL0 = (d_MODEVALUE_T0 - d_RELOADVALUE_T0);
 	if (IrTimerCon)
 	{
 		if (0x01 == (P30EICFG&0x01))
@@ -56,12 +58,15 @@ void Timer0_Isr(void)  interrupt TMR0_VECTOR
 			IrTimerCon = 0;
 		}
 	}
-	IrLockTimerCon++;
-	if (IrLockTimerCon > 5000) //100MS
+	if (IrLock)
 	{
-		IrLockTimerCon = 0;
-		IrValue = 0;
-		IrLock = 0;
+		IrLockTimerCon++;
+		if (IrLockTimerCon > 5000)
+		{
+			IrLockTimerCon = 0;
+			IrValue = 0;
+			IrLock = 0;
+		}
 	}
 }
 

@@ -194,10 +194,10 @@ void	InitSys(void)
 	P30CFG = GPIO_MUX_GPIO;
 	P3TRIS &= ~(1 << 0);
 	P30EICFG = 0x02;
-	P3EXTIE = 1;
 	P31CFG = GPIO_MUX_GPIO;
 	P3TRIS &= ~(1 << 1);
 	P31EICFG = 0x02;
+	P3EXTIE = 1;
 	IRQ_SET_PRIORITY(IRQ_P3,IRQ_PRIORITY_HIGH);
 
 	// IPH0 = Bin(00000010);
@@ -219,7 +219,7 @@ void	InitSys(void)
 
 	IRQ_ALL_ENABLE();							 //¿ªÆô×ÜÖÐ¶Ï
 	TMR_Start(TMR0);
-	TMR_Start(TMR1);
+	// TMR_Start(TMR1);
 	TMR2_Start();
 	ADC_Start();
 	ADC_GO();

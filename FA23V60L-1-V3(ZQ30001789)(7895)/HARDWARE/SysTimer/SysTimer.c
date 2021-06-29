@@ -138,17 +138,13 @@ void SysTimer_Isr(void)  interrupt TMR2_VECTOR   //1ms中断一次
 		if (b1ms > 9)
 		{
 			b1ms = 0;
-			if (0 == ADC_IS_BUSY) { //ADC????????????/???é????????
-				if (ADCCHS == ADC_CH_10) {
-					AdNtcNew = 1;
-					AdNtcValue = ADC_GetADCResult() >> 2;
-					ADC_EnableChannel(ADC_CH_9);
-					ADC_GO();
-					AdErrTim = 0;
-				} else if (ADCCHS == ADC_CH_9) {
+			if (0 == ADC_IS_BUSY) {
+				if (ADCCHS == ADC_CH_9) {
 					AdKeyNew = 1;
 					AdKeyValue = ADC_GetADCResult() >> 4;
 					ADC_EnableChannel(ADC_CH_10);
+					ADC_GO();
+					AdErrTim = 0;
 					if (TouchKeyTim)
 					{
 						if (AdKeyValue > 250)
@@ -170,6 +166,10 @@ void SysTimer_Isr(void)  interrupt TMR2_VECTOR   //1ms中断一次
 							}
 						}
 					}
+				} else if (ADCCHS == ADC_CH_10) {
+					AdNtcNew = 1;
+					AdNtcValue = ADC_GetADCResult() >> 2;
+					ADC_EnableChannel(ADC_CH_9);
 					ADC_GO();
 					AdErrTim = 0;
 				}
@@ -180,7 +180,7 @@ void SysTimer_Isr(void)  interrupt TMR2_VECTOR   //1ms中断一次
 					//	   ADT   = Bin(11101111);	//????????°?AD?§?§??100MS?ó×???????
 					//       ADCH  = Bin(01000000);
 					//	   ADCON = AD_NTC;
-					ADCCHS = ADC_CH_9;
+					ADC_EnableChannel(ADC_CH_9);
 					ADCON1 = 0xF0;
 					ADC_GO();
 				}
@@ -210,15 +210,16 @@ void SysTimer_Isr(void)  interrupt TMR2_VECTOR   //1ms中断一次
 					if (GoErrCount > 40)
 					{
 						GoErrCon = 0;
-#if CONFIG_ZERO_CHECK
 						GoErrCount = 0;
+					}
+					else {
+#if CONFIG_ZERO_CHECK
+						GoErrCon = 1;
 #else
-
-						GoErrCount = 50;
+						GoErrCon = 0;
+						GoErrCount = 0;
 #endif
 					}
-					else
-						GoErrCon = 1;
 				}
 			}
 			else
@@ -227,11 +228,7 @@ void SysTimer_Isr(void)  interrupt TMR2_VECTOR   //1ms中断一次
 				// EX0 = 0;
 				// IE0 = 0;
 				P3EXTIF &= 0xfd;
-#if CONFIG_ZERO_CHECK
 				GoErrCount = 0;
-#else
-				GoErrCount = 50;
-#endif
 				GoErrTimer = 0;
 			}
 			//***********************************************
