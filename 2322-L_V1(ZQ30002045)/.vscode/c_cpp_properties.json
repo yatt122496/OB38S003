@@ -3,20 +3,20 @@
         {
             "name": "Target1",
             "includePath": [
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE",
                 "c:\\file\\program\\OB38S003",
                 "C:\\Keil_v5\\C51\\INC",
-                "c:\\file\\program\\OB38S003\\2322-L_V1",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\KEY",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\IR",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\SysTimer",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\Disp",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\TM1638",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\SysInit",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\ADC",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\HeatCon",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\LedAutoCon",
-                "c:\\file\\program\\OB38S003\\2322-L_V1\\HARDWARE\\ErrTest"
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\KEY",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\IR",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\SysTimer",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\Disp",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\TM1638",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\SysInit",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\ADC",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\HeatCon",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\LedAutoCon",
+                "c:\\file\\program\\OB38S003\\2322-L_V1(ZQ30002045)\\HARDWARE\\ErrTest"
             ],
             "defines": [
                 "__C51__",
