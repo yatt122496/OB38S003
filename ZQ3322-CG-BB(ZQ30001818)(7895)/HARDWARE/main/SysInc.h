@@ -154,11 +154,11 @@ GO_TEST/INT0/P3.2--|1		     20|--P4.2/TXAL1 \
 *功能说明:  中断向量表
 ************************************************************/
 #define d_MODEVALUE_T0      65536     //MODE1 16bit 65536
-#define d_RELOADVALUE_T0    120      //User Define Reload Value
+#define d_RELOADVALUE_T0    120      //User Define Reload Value	20us
 #define d_MODEVALUE_T1      65536    //MODE1 16bit 65536
-#define d_RELOADVALUE_T1    20000      //User Define Reload Value
+#define d_RELOADVALUE_T1    20000      //User Define Reload Value	10md
 #define d_MODEVALUE_T2      65536
-#define d_RELOADVALUE_T2    2000 //User Define Reload Value
+#define d_RELOADVALUE_T2    2000 //User Define Reload Value	1ms
 // #define   INT0    interrupt  0
 // #define	  TIMER0  interrupt  1
 // #define	  INT1    interrupt  2
