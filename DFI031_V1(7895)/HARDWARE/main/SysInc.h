@@ -100,7 +100,7 @@
 *功能说明:  中断向量表
 ************************************************************/
 #define d_MODEVALUE_T0      65536     //MODE1 16bit 65536
-#define d_RELOADVALUE_T0    160      //User Define Reload Value
+#define d_RELOADVALUE_T0    120      //User Define Reload Value
 #define d_MODEVALUE_T1      65536    //MODE1 16bit 65536
 #define d_RELOADVALUE_T1    66      //User Define Reload Value
 #define d_MODEVALUE_T2      65536
